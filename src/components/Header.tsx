@@ -1,11 +1,15 @@
 import { shadow } from "@/styles/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { DarkModeToggle } from "./DarkModeToggle";
+import LogoutButton from "./LogoutButton";
 
 function Header() {
+  const user = 1;
   return (
     <header
-      className="bg-popover relative flex h-24 w-full items-center justify-between px-3 sm:px-8"
+      className="relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8"
       style={{
         boxShadow: shadow,
       }}
@@ -24,7 +28,23 @@ function Header() {
         </h1>
       </Link>
 
-      <div className="flex gap-4"></div>
+      <div className="flex gap-4">
+        {user ? (
+          <LogoutButton></LogoutButton>
+        ) : (
+          <>
+            <Button asChild>
+              <Link href={"/sign-up"} className="hidden sm:block">
+                Sign Up
+              </Link>
+            </Button>
+            <Button asChild variant={"outline"}>
+              <Link href={"/login"}>Login</Link>
+            </Button>
+          </>
+        )}
+        <DarkModeToggle></DarkModeToggle>
+      </div>
     </header>
   );
 }
