@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { logOutAction } from "@/action/users";
 
-async function LogOutButton() {
+function LogOutButton() {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 

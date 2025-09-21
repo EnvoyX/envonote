@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { DarkModeToggle } from "./DarkModeToggle";
-import LogOutButton from "./LogoutButton";
+import LogOutButton from "./LogOutButton";
 import { getUser } from "@/app/auth/server";
 
 async function Header() {
