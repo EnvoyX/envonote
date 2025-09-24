@@ -1,6 +1,5 @@
 import { prisma } from "@/db/prisma";
 import { getUser } from "./auth/server";
-import AskAIButton from "@/components/AskAIButton";
 import NewNoteButton from "@/components/NewNoteButton";
 import NoteTextInput from "@/components/NoteTextInput";
 type Props = {
@@ -21,7 +20,6 @@ export default async function Home({ searchParams }: Props) {
   return (
     <main className="flex h-full flex-col items-center gap-4">
       <div className="flex w-full max-w-4xl justify-end gap-2">
-        <AskAIButton user={user} />
         <NewNoteButton user={user} />
       </div>
       <NoteTextInput noteId={noteId} startingNoteText={note?.text || ""} />
