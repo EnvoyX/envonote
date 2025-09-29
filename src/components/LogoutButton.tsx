@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { logOutAction } from "@/action/users";
 
-function LogOutButton() {
+function LogoutButton() {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
@@ -39,4 +39,4 @@ function LogOutButton() {
   );
 }
 
-export default LogOutButton;
+export default LogoutButton;
